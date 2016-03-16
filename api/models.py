@@ -1,9 +1,9 @@
 from django.db import models
 
 # Create your models here.
-class User(models.Model):
+class TwitterUser(models.Model):
     """
-    A User is a follower that has had their Data collected
+    A TwitterUser is a follower that has had their Data collected
     classification
     0 - individual
     1 - business
@@ -27,6 +27,7 @@ class User(models.Model):
     has_profile_url = models.BooleanField()
     verified = models.BooleanField()
     classification = models.IntegerField()
+    owner = models.ForeignKey('auth.User', related_name='api')
 
     def __str__(self):
         return self.screen_name + " - " + str(self.classification)

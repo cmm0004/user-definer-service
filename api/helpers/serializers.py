@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from api.models import User
+from api.models import TwitterUser
 
 
-class UserSerializer(serializers.ModelSerializer):
+class TwitterUserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = TwitterUser
         fields = ('user_id',
                     'screen_name',
                     'contributors_enabled',
