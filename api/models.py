@@ -27,7 +27,7 @@ class TwitterUser(models.Model):
     has_profile_url = models.BooleanField()
     verified = models.BooleanField()
     classification = models.IntegerField()
-    owner = models.ForeignKey('auth.User', related_name='api')
+    owner = models.ForeignKey('auth.User', related_name='twitterusers')
 
     def __str__(self):
         return self.screen_name + " - " + str(self.classification)
